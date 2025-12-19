@@ -3,6 +3,22 @@
 import { useState } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon, StarIcon } from '@heroicons/react/24/solid'
 import reviewsData from '../../languages/padelreviews.json'
+import { motion } from 'framer-motion'
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+}
 
 const Reviews = () => {
 
@@ -20,19 +36,27 @@ const Reviews = () => {
 
   return (
     <section className="py-20 px-8 md:px-16 lg:px-32">
-      <div className="max-w-7xl mx-auto space-y-0 relative">
+      <motion.div
+        className="max-w-7xl mx-auto space-y-0 relative"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {/* Left Chevron */}
-        <div
+        <motion.div
           onClick={prevReview}
           className="absolute left-8 top-1/2 -translate-y-1/2 z-10 transition-colors"
+          variants={itemVariants}
         >
           <ChevronLeftIcon className="w-6 h-6 text-white" />
-        </div>
+        </motion.div>
 
         {/* Review Container */}
-        <div
+        <motion.div
           key={currentIndex}
           className="bg-black rounded-[30px] p-16 md:py-24 text-white text-center relative overflow-hidden min-h-[400px] flex flex-col justify-center"
+          variants={itemVariants}
         >
           {/* Stars */}
           <div className="flex justify-center gap-x-1 mb-6">
@@ -49,16 +73,17 @@ const Reviews = () => {
 
           {/* Name */}
           <p className="font-inter text-base md:text-xl font-medium">{currentReview.name}</p>
-        </div>
+        </motion.div>
 
         {/* Right Chevron */}
-        <div
+        <motion.div
           onClick={nextReview}
           className="absolute right-8 top-1/2 -translate-y-1/2 z-10 transition-colors"
+          variants={itemVariants}
         >
           <ChevronRightIcon className="w-6 h-6 text-white" />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }
