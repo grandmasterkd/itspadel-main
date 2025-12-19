@@ -19,7 +19,7 @@ const Reviews = () => {
   const currentReview = reviewsData[currentIndex]
 
   return (
-    <section className="py-20 px-8 md:px-16 lg:px-32">
+    <section className="py-12 md:py-20 px-8 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto space-y-0 relative">
         {/* Left Chevron */}
         <div
@@ -37,7 +37,7 @@ const Reviews = () => {
           {/* Stars */}
           <div className="flex justify-center gap-x-1 mb-6">
             {[...Array(5)].map((_, i) => (
-              <StarIcon key={i} className="size-9 text-white" />
+              <StarIcon key={i} className="size-6 md:size-9 text-white" />
             ))}
           </div>
 
@@ -45,10 +45,10 @@ const Reviews = () => {
           <h3 className="font-bison text-4xl mb-6 max-w-[450px] mx-auto leading-tight">{currentReview.heading}</h3>
 
           {/* Message */}
-          <p className="font-inter text-white text-base md:text-xl mb-10 max-w-3xl mx-auto">{currentReview.message}</p>
+          <p className="font-inter text-white text-sm md:text-xl mb-10 max-w-3xl mx-auto">{currentReview.message}</p>
 
           {/* Name */}
-          <p className="font-inter text-base md:text-xl font-medium">{currentReview.name}</p>
+          <p className="font-inter text-sm  md:text-xl font-medium">{currentReview.name}</p>
         </div>
 
         {/* Right Chevron */}

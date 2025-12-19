@@ -3,7 +3,7 @@ import eventsData from '../../../languages/padelevents.json'
 
 const Experience = () => {
   return (
-    <section className="py-20 px-8 md:px-16 lg:px-32">
+    <section className="py-12 md:py-20 px-8 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -16,10 +16,10 @@ const Experience = () => {
             />
           </div>
           <div>
-            <h2 className="font-bison text-4xl md:text-5xl mb-6">
+            <h2 className="font-bison text-4xl md:text-4xl mb-6">
               {eventsData.experience.headline}
             </h2>
-            <p className="font-inter text-base text-gray-700 mb-8">
+            <p className="font-inter text-sm md:text-base text-black/50 mb-8">
               {eventsData.experience.paragraph}
             </p>
             <a

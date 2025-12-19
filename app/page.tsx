@@ -10,7 +10,7 @@ import homeData from '../languages/padelhome.json'
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "It's Padel - Indoor Padel Court",
+  title: "Its Padel - Indoor Padel Court",
   description: "Providing competitive padel sporting, immersive community, and a vibrant padel experience all over UK"
 }
 

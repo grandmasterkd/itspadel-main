@@ -22,14 +22,14 @@ export default function Community() {
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
-        <div className="w-full mx-auto grid place-items-center text-center mb-16">
+        <div className="w-full mx-auto grid place-items-center text-center md:mb-16 mb-8">
           <h2 className="font-bison max-w-[500px] text-4xl md:text-6xl leading-tight">
             {communityData.headline}
           </h2>
         </div>
 
         {/* Cards - Desktop */}
-        <div className="hidden md:block relative w-full h-[40rem] mx-auto flex justify-center">
+        <div className="hidden md:flex relative w-full h-[40rem] mx-auto justify-center">
           <div
             className="absolute w-[22rem] h-[28rem] rounded-[2rem] overflow-hidden shadow-lg"
             style={{
@@ -128,7 +128,7 @@ export default function Community() {
         </div>
 
         {/* Intro */}
-        <p className="text-center mt-0 mb-0 font-inter text-base">
+        <p className="text-center mt-4 md:mt-0 mb-0 font-inter text-sm md:text-base">
           Follow us on social media
         </p>
 

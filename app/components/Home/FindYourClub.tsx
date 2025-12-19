@@ -42,8 +42,8 @@ const FindYourClub = () => {
   }
 
   return (
-    <section className="py-20 px-8 md:px-16 lg:px-32">
-      <h2 className="font-bison text-4xl md:text-5xl text-center mb-12 animate-fade-in-0">
+    <section className="py-12 md:py-20 px-8 md:px-16 lg:px-32">
+      <h2 className="font-bison text-4xl md:text-6xl text-center md:mb-12 mb-8 animate-fade-in-0">
         Find your club
       </h2>
       <div className="relative overflow-hidden animate-fade-in-1">
@@ -53,12 +53,12 @@ const FindYourClub = () => {
         >
           {[...clubs, ...clubs.slice(0, 3)].map((club, index) => (
             <div key={`${club.name}-${index}`} className="w-full md:w-1/3 flex-shrink-0 px-2">
-              <div className="relative rounded-2xl overflow-hidden cursor-pointer h-80 md:h-96" onClick={handleClubClick}>
+              <div className="relative rounded-2xl overflow-hidden cursor-pointer h-96" onClick={handleClubClick}>
                 <Image src={club.image} alt={club.name} width={400} height={450} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 text-white">
                   <h3 className="font-bison text-2xl md:text-3xl mb-1">{club.name}</h3>
-                  <p className="flex items-center font-inter text-base text-white">
+                  <p className="flex items-center font-inter text-sm md:text-base text-white">
                     View Club <ChevronRightIcon className="w-4 h-4 md:w-5 md:h-5 ml-2" />
                   </p>
                 </div>

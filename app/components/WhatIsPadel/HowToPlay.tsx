@@ -27,17 +27,18 @@ const HowToPlay = () => {
 
 
   return (
-    <section className="py-20 px-8 md:px-16 lg:px-32">
+    <section className="py-8 md:py-20 px-0 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12 animate-fade-in-0">
-          <h2 className="font-bison text-4xl md:text-5xl mb-4">{data.headline}</h2>
+        <div className="text-center mb-8 md:mb-12 animate-fade-in-0">
+          <h2 className="font-bison text-4xl md:text-5xl mb-0">{data.headline}</h2>
         </div>
 
-        <div className="bg-[#EEEDED] rounded-full p-2 flex w-fit mx-auto mb-12 animate-fade-in-1">
+      <div className='px-8 md:px-0' >
+        <div className="bg-[#EEEDED] rounded-full p-2 flex w-auto md:w-fit mx-auto mb-8 md:mb-12 animate-fade-in-1 overflow-auto">
           {tabs.map((tab: Tab, index: number) => (
             <button
               key={index}
-              className={`px-8 py-3 rounded-full font-inter font-medium text-base tracking-tighter ${
+              className={`px-6 md:px-8 py-3 rounded-full font-inter font-medium text-sm md:text-base tracking-tighter whitespace-nowrap ${
                 activeTab === index
                   ? 'bg-white text-[#009FF3]'
                   : 'text-[#777575] bg-transparent'
@@ -47,8 +48,8 @@ const HowToPlay = () => {
               {tab.title}
             </button>
           ))}
-        </div>
-
+        </div>      
+      </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 animate-fade-in-2">
           <Image
             src={tabs[activeTab].image}
@@ -70,8 +71,8 @@ const HowToPlay = () => {
               return (
                 <div className='h-full flex flex-col items-start justify-between' >
                   <div>
-                  <h3 className="font-bison text-5xl mb-1">{content.headline}</h3>
-                  <p className="font-inter text-black/50 text-base">{content.paragraph}</p>
+                  <h3 className="font-bison text-4xl mb-1">{content.headline}</h3>
+                  <p className="font-inter text-black/50 text-sm md:text-base">{content.paragraph}</p>
               </div>
               <div className='w-full' >
                   {isGear && (

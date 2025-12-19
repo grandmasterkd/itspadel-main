@@ -6,14 +6,14 @@ const Playtomic = () => {
   const data = whatIsPadelData.playtomic
 
   return (
-    <section className="py-20 px-8 md:px-16 lg:px-32">
+    <section className="py-12 md:py-20 px-8 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in-0">
             <h2 className="font-bison text-4xl md:text-5xl mb-6">
               {data.headline}
             </h2>
-            <p className="font-inter text-base text-gray-700 mb-8">
+            <p className="font-inter text-sm md:text-base text-black/50 mb-8">
               {data.paragraph}
             </p>
             <Link

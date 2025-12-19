@@ -6,7 +6,7 @@ const PadelVsTennis = () => {
   const data = whatIsPadelData.padelVsTennis
 
   return (
-    <section className="py-20 px-8 md:px-16 lg:px-32">
+    <section className="py-8 md:py-20 px-8 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in-0">
@@ -22,7 +22,7 @@ const PadelVsTennis = () => {
             <h2 className="font-bison text-4xl md:text-5xl mb-2">
               {data.headline}
             </h2>
-            <p className="font-inter text-base text-black/50 mb-8">
+            <p className="font-inter text-sm md:text-base text-black/50 mb-8">
               {data.paragraph}
             </p>
             <Link

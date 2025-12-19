@@ -13,15 +13,15 @@ const FAQ = () => {
   }
 
   return (
-    <section className="py-20 px-8 md:px-16 lg:px-32">
+    <section className="py-12 md:py-20 px-8 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="font-bison text-4xl md:text-5xl mb-2">{faqData.headline}</h2>
-          <p className="font-inter text-base text-gray-600 mb-8">{faqData.subtext}</p>
+          <h2 className="font-bison text-4xl md:text-6xl mb-2">{faqData.headline}</h2>
+          <p className="font-inter text-sm md:text-base text-gray-600 mb-8">{faqData.subtext}</p>
           <Link
             href={faqData.ctaLink}
-            className="bg-[#009FF3] text-white px-6 py-3 font-inter font-medium hover:bg-[#0080cc] transition-colors uppercase"
+            className="bg-[#009FF3] text-white px-6 py-3 font-inter font-medium hover:bg-[#0080cc] transition-colors uppercase text-sm"
           >
             {faqData.ctaText}
           </Link>
