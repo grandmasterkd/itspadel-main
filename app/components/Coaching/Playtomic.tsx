@@ -1,6 +1,3 @@
-"use client"
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import coachingData from '../../../languages/padelcoaching.json'
 import Image from 'next/image'
@@ -10,12 +7,7 @@ const Playtomic = () => {
     <section className="py-20 px-8 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h2 className="font-bison text-4xl md:text-5xl mb-6">
               {coachingData.playtomic.headline}
             </h2>
@@ -30,14 +22,8 @@ const Playtomic = () => {
             >
               {coachingData.playtomic.ctaText}
             </Link>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
+          </div>
+          <div className="relative">
             <Image
               src={coachingData.playtomic.image}
               alt="Playtomic app"
@@ -52,7 +38,7 @@ const Playtomic = () => {
               height={50}
               className="absolute bottom-4 right-4 w-16 h-16 bg-white rounded-full p-2"
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

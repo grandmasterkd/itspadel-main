@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 
@@ -46,10 +45,9 @@ const FindYourClub = () => {
     <section className="py-20 px-8 md:px-16 lg:px-32">
       <h2 className="font-bison text-4xl md:text-5xl text-center mb-12">Find your club</h2>
       <div className="relative overflow-hidden">
-        <motion.div
+        <div
           className="flex"
-          animate={{ x: `-${currentIndex * slideWidth}%` }}
-          transition={{ duration: 0.8, ease: 'easeInOut' }}
+          style={{ transform: `translateX(-${currentIndex * slideWidth}%)`, transition: 'transform 0.8s ease-in-out' }}
         >
           {[...clubs, ...clubs.slice(0, 3)].map((club, index) => (
             <div key={`${club.name}-${index}`} className="w-full md:w-1/3 flex-shrink-0 px-2">
@@ -65,37 +63,29 @@ const FindYourClub = () => {
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
 
-      <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={closeModal}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+          onClick={closeModal}
+        >
+          <div
+            className="bg-white p-8 rounded-lg max-w-md mx-4"
+            onClick={(e) => e.stopPropagation()}
           >
-            <motion.div
-              className="bg-white p-8 rounded-lg max-w-md mx-4"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
+            <h3 className="font-bison text-2xl mb-4">Coming Soon</h3>
+            <p className="font-inter text-gray-600 mb-6">This club is coming soon. Stay tuned for updates!</p>
+            <button
+              onClick={closeModal}
+              className="bg-[#009FF3] text-white px-6 py-2 font-inter font-medium hover:bg-[#0080cc] transition-colors"
             >
-              <h3 className="font-bison text-2xl mb-4">Coming Soon</h3>
-              <p className="font-inter text-gray-600 mb-6">This club is coming soon. Stay tuned for updates!</p>
-              <button
-                onClick={closeModal}
-                className="bg-[#009FF3] text-white px-6 py-2 font-inter font-medium hover:bg-[#0080cc] transition-colors"
-              >
-                Close
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

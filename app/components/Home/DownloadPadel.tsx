@@ -1,50 +1,15 @@
-"use client"
-
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 const DownloadPadel = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.3,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8 },
-    },
-  }
-
   return (
-    <motion.section
-      className="px-8 py-10 md:py-20"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-    >
+    <section className="px-8 py-10 md:py-20">
       <div className="container mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-20">
         {/* Left: Rounded gray container with image */}
-        <motion.div
-          className="flex-1 rounded-2xl"
-          variants={itemVariants}
-        >
+        <div className="flex-1 rounded-2xl">
           <Image src="/playtomic-cover-image.webp" alt="Playtomic Cover" width={400} height={400} className="w-full h-[400px] aspect-square rounded-2xl object-cover" />
-        </motion.div>
+        </div>
         {/* Right: Logo and text */}
-        <motion.div
-          className="flex-1 text-left h-full flex flex-col justify-between items-start"
-          variants={itemVariants}
-        >
+        <div className="flex-1 text-left h-full flex flex-col justify-between items-start">
           <Image src="/playtomic-logo.svg" alt="Playtomic Logo" width={200} height={200} className="h-12 mb-4 mx-0" />
           <h2 className="font-bison font-bold text-5xl md:text-6xl mb-4 tracking-tighter">
             BOOK YOUR COURT BY<br />
@@ -62,9 +27,9 @@ const DownloadPadel = () => {
           >
             DOWNLOAD PLAYTOMIC
           </a>
-        </motion.div>
+        </div>
       </div>
-    </motion.section>
+    </section>
   )
 }
 

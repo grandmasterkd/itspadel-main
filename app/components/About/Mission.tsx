@@ -1,6 +1,3 @@
-"use client"
-
-import { motion } from 'framer-motion'
 import aboutData from '../../../languages/padelabout.json'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,12 +7,7 @@ const Mission = () => {
     <section className="py-20 px-8 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <Image
               src={aboutData.mission.image}
               alt="Padel mission"
@@ -23,13 +15,8 @@ const Mission = () => {
               height={450}
               className="w-full h-96 object-cover rounded-2xl"
             />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          </div>
+          <div>
             <h2 className="font-bison text-4xl md:text-5xl mb-2">
               {aboutData.mission.headline}
             </h2>
@@ -42,7 +29,7 @@ const Mission = () => {
             >
               {aboutData.mission.ctaText}
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

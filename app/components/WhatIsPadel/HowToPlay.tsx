@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { PlusIcon } from '@heroicons/react/24/outline'
 import whatIsPadelData from '../../../languages/padelwhatispadel.json'
@@ -22,48 +21,18 @@ const HowToPlay = () => {
   const [activeTab, setActiveTab] = useState(0)
   const [selectedChild, setSelectedChild] = useState<{headline: string, paragraph: string} | null>(null)
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.1,
-      },
-    },
-  }
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8 },
-    },
-  }
 
   return (
     <section className="py-20 px-8 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center mb-12">
           <h2 className="font-bison text-4xl md:text-5xl mb-4">{whatIsPadelData.howToPlay.headline}</h2>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="bg-[#EEEDED] rounded-full p-2 flex w-fit mx-auto mb-12"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div className="bg-[#EEEDED] rounded-full p-2 flex w-fit mx-auto mb-12">
           {whatIsPadelData.howToPlay.tabs.map((tab: Tab, index: number) => (
-            <motion.button
+            <button
               key={index}
               className={`px-8 py-3 rounded-full font-inter font-medium text-base tracking-tighter ${
                 activeTab === index
@@ -71,20 +40,13 @@ const HowToPlay = () => {
                   : 'text-[#777575] bg-transparent'
               }`}
               onClick={() => setActiveTab(index)}
-              variants={itemVariants}
             >
               {tab.title}
-            </motion.button>
+            </button>
           ))}
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
           <Image
             src={whatIsPadelData.howToPlay.tabs[activeTab].image}
             alt={whatIsPadelData.howToPlay.tabs[activeTab].title}
@@ -132,7 +94,7 @@ const HowToPlay = () => {
               )
             })()}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
