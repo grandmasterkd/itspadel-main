@@ -1,23 +1,35 @@
 "use client"
 
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import communityData from '../../languages/padelcommunity.json'
 import { Hash, Instagram, Youtube, Twitch } from 'lucide-react'
 
+
+
 export default function Community() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % communityData.images.length)
+    }, 6000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="py-24 px-8 md:px-16 lg:px-32 overflow-visible">
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
-        <div className="w-full mx-auto grid place-items-center text-center mb-16 animate-fade-in-0">
+        <div className="w-full mx-auto grid place-items-center text-center mb-16">
           <h2 className="font-bison max-w-[500px] text-4xl md:text-6xl leading-tight">
             {communityData.headline}
           </h2>
         </div>
 
-        {/* Cards */}
-        <div className="relative w-full h-[40rem] mx-auto flex justify-center animate-fade-in-1">
+        {/* Cards - Desktop */}
+        <div className="hidden md:block relative w-full h-[40rem] mx-auto flex justify-center">
           <div
             className="absolute w-[22rem] h-[28rem] rounded-[2rem] overflow-hidden shadow-lg"
             style={{
@@ -95,13 +107,33 @@ export default function Community() {
           </div>
         </div>
 
+        {/* Cards - Mobile Carousel */}
+        <div className="md:hidden relative overflow-hidden animate-fade-in-1">
+          <div
+            className="flex"
+            style={{ transform: `translateX(-${currentIndex * 100}%)`, transition: 'transform 0.8s ease-in-out' }}
+          >
+            {communityData.images.map((image, index) => (
+              <div key={index} className="w-full flex-shrink-0">
+                <Image
+                  src={image.image}
+                  alt={image.alt}
+                  width={300}
+                  height={500}
+                  className="w-full h-[28rem] object-cover rounded-[2rem] mx-auto"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Intro */}
-        <p className="text-center mt-0 mb-0 font-inter text-base animate-fade-in-2">
+        <p className="text-center mt-0 mb-0 font-inter text-base">
           Follow us on social media
         </p>
 
         {/* Links */}
-        <div className="flex justify-center gap-8 animate-fade-in-3">
+        <div className="flex justify-center gap-8">
           {[
             { label: 'tiktok', href: 'https://www.tiktok.com/@padel', icon: Hash },
             { label: 'instagram', href: 'https://www.instagram.com/padel', icon: Instagram },

@@ -39,7 +39,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="example@gmail.com"
-                className="w-full px-0 py-3 border-b border-gray-300 tracking-tighter text-base"
+                className="w-full px-0 py-3 border-b border-gray-300 bg-transparent tracking-tighter text-base"
               />
               <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-black/50">
                 <ArrowRight className="w-5 h-5" />
