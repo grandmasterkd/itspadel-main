@@ -7,7 +7,7 @@ const PrivateCoaching = () => {
   return (
     <section className="py-20 px-8 md:px-16 lg:px-32 bg-gray-50">
       <div className="max-w-7xl mx-auto text-center">
-        <div>
+        <div className="animate-fade-in-0">
           <h2 className="font-bison text-4xl md:text-5xl mb-6">
             {data.headline}
           </h2>

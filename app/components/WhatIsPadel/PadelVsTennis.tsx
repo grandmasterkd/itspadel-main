@@ -9,7 +9,7 @@ const PadelVsTennis = () => {
     <section className="py-20 px-8 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="animate-fade-in-0">
             <Image
               src="/itspadel-padel-vs-tennis.webp"
               alt="Padel vs Tennis"
@@ -18,7 +18,7 @@ const PadelVsTennis = () => {
               className="w-full h-96 object-cover rounded-2xl"
             />
           </div>
-          <div>
+          <div className="animate-fade-in-1">
             <h2 className="font-bison text-4xl md:text-5xl mb-2">
               {data.headline}
             </h2>

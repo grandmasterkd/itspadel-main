@@ -29,11 +29,11 @@ const HowToPlay = () => {
   return (
     <section className="py-20 px-8 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in-0">
           <h2 className="font-bison text-4xl md:text-5xl mb-4">{data.headline}</h2>
         </div>
 
-        <div className="bg-[#EEEDED] rounded-full p-2 flex w-fit mx-auto mb-12">
+        <div className="bg-[#EEEDED] rounded-full p-2 flex w-fit mx-auto mb-12 animate-fade-in-1">
           {tabs.map((tab: Tab, index: number) => (
             <button
               key={index}
@@ -49,7 +49,7 @@ const HowToPlay = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 animate-fade-in-2">
           <Image
             src={tabs[activeTab].image}
             alt={tabs[activeTab].title}

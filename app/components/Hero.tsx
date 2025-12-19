@@ -1,7 +1,4 @@
-"use client"
-
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 
 interface HeroProps {
   image?: string
@@ -13,51 +10,21 @@ interface HeroProps {
   cta2Link?: string
 }
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3
-    }
-  }
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-}
-
 const Hero = ({ image = '/itspadel-homehero-bg.webp', headline, paragraph, ctaText, ctaLink, cta2Text, cta2Link }: HeroProps) => {
   return (
     <section className="relative w-screen min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${image})` }}>
       <div className="absolute inset-0 bg-black/20"></div>
       <div className="relative z-10 flex items-end min-h-screen pl-8 md:pl-16 lg:pl-32 pb-20">
-        <motion.div
-          className="max-w-2xl text-left"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.h1
-            className="font-bison font-bold text-6xl lg:text-8xl text-white mb-4 tracking-tighter"
-            variants={itemVariants}
-          >
+        <div className="max-w-2xl text-left">
+          <h1 className="font-bison font-bold text-6xl lg:text-8xl text-white mb-4 tracking-tighter animate-fade-in-0">
             {headline}
-          </motion.h1>
+          </h1>
           {paragraph && (
-            <motion.p
-              className="font-inter text-base md:text-xl font-medium text-white mb-8 tracking-tight"
-              variants={itemVariants}
-            >
+            <p className="font-inter text-base md:text-xl font-medium text-white mb-8 tracking-tight animate-fade-in-1">
               {paragraph}
-            </motion.p>
+            </p>
           )}
-          <motion.div
-            className="flex gap-4"
-            variants={itemVariants}
-          >
+          <div className="flex gap-4 animate-fade-in-2">
             {ctaText && ctaLink && (
               <Link href={ctaLink} className="bg-[#009FF3] text-white px-6 py-3 font-inter font-medium tracking-tight hover:bg-[#0080cc] transition-colors">
                 {ctaText}
@@ -68,8 +35,8 @@ const Hero = ({ image = '/itspadel-homehero-bg.webp', headline, paragraph, ctaTe
                 {cta2Text}
               </Link>
             )}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   )

@@ -9,7 +9,7 @@ const Playtomic = () => {
     <section className="py-20 px-8 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="animate-fade-in-0">
             <h2 className="font-bison text-4xl md:text-5xl mb-6">
               {data.headline}
             </h2>
@@ -25,7 +25,7 @@ const Playtomic = () => {
               {data.ctaText}
             </Link>
           </div>
-          <div className="relative">
+          <div className="relative animate-fade-in-1">
             <Image
               src={data.image}
               alt="Playtomic app"
