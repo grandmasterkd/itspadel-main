@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image'
 import communityData from '../../languages/padelcommunity.json'
 import { Hash, Instagram, Youtube, Twitch } from 'lucide-react'

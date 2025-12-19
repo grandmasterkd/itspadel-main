@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from 'framer-motion'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import homeData from '../../../languages/padelhome.json'
 import Image from 'next/image'
@@ -15,13 +14,9 @@ const Services = () => {
         {/* Row 1: 30% - 70% */}
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-8">
           {services.slice(0, 2).map((service, index) => (
-            <motion.div
+            <div
               key={service.headline}
               className={`relative rounded-3xl overflow-hidden cursor-pointer group ${index === 0 ? 'lg:col-span-3' : 'lg:col-span-7'}`}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
             >
               <Image src={service.image} alt={service.headline} width={400} height={500} className="w-full h-64 md:h-96 object-cover" />
                <div className="h-full absolute inset-0 bg-gradient-to-t from-black to-transparent group-hover:bg-black/50 transition-colors">
@@ -33,19 +28,15 @@ const Services = () => {
                 </Link>
               </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
         {/* Row 2: 70% - 30% */}
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-8">
           {services.slice(2, 4).map((service, index) => (
-            <motion.div
+            <div
               key={service.headline}
               className={`relative rounded-3xl overflow-hidden cursor-pointer group ${index === 0 ? 'lg:col-span-7' : 'lg:col-span-3'}`}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: (index + 2) * 0.2 }}
-              viewport={{ once: true }}
             >
               <Image src={service.image} alt={service.headline} width={400} height={500} className="w-full h-64 md:h-96 object-cover" />
                <div className="w-full absolute inset-0 bg-gradient-to-t from-black to-transparent group-hover:bg-black/50 transition-colors">
@@ -57,7 +48,7 @@ const Services = () => {
                 </Link>
               </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
