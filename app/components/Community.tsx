@@ -1,6 +1,7 @@
 "use client"
 
 import Image from 'next/image'
+import communityData from '../../languages/padelcommunity.json'
 import { Hash, Instagram, Youtube, Twitch } from 'lucide-react'
 
 
@@ -13,7 +14,7 @@ export default function Community() {
         {/* Heading */}
         <div className="w-full mx-auto grid place-items-center text-center mb-16">
           <h2 className="font-bison max-w-[500px] text-4xl md:text-6xl leading-tight">
-            CONNECT WITH OUR ONLINE COMMUNITY
+            {communityData.headline}
           </h2>
         </div>
 
@@ -27,8 +28,8 @@ export default function Community() {
             }}
           >
             <Image
-              src="/itspadel-gameplay-gear.webp"
-              alt="Padel player in action"
+              src={communityData.images[0].image}
+              alt={communityData.images[0].alt}
               width={300}
               height={500}
               className="w-full h-full object-cover"
@@ -42,8 +43,8 @@ export default function Community() {
             }}
           >
             <Image
-              src="/itspadel-social-lifestyle.webp"
-              alt="Padel court view"
+              src={communityData.images[1].image}
+              alt={communityData.images[1].alt}
               width={300}
               height={500}
               className="w-full h-full object-cover"
@@ -57,8 +58,8 @@ export default function Community() {
             }}
           >
             <Image
-              src="/itspadel-gameplay-lifestyle.webp"
-              alt="Padel equipment"
+              src={communityData.images[2].image}
+              alt={communityData.images[2].alt}
               width={300}
               height={500}
               className="w-full h-full object-cover"
@@ -72,8 +73,8 @@ export default function Community() {
             }}
           >
             <Image
-              src="/itspadel-lifestyle.webp"
-              alt="Padel match"
+              src={communityData.images[3].image}
+              alt={communityData.images[3].alt}
               width={300}
               height={500}
               className="w-full h-full object-cover"
@@ -87,8 +88,8 @@ export default function Community() {
             }}
           >
             <Image
-              src="/itspadel-gameplay.webp"
-              alt="Padel players celebrating"
+              src={communityData.images[5].image}
+              alt={communityData.images[5].alt}
               width={300}
               height={500}
               className="w-full h-full object-cover"
