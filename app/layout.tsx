@@ -17,7 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "It's Padel - Indoor Padel Court",
   description: "It's Padel",
-  icons: "/itspadel-logo-main.svg",
+   icons: {
+     icon: '/itspadel-logo-main.svg', 
+     shortcut: '/itspadel-logo-main.svg',
+     apple: '/itspadel-logo-main.svg',  // optional for iOS
+   },
 };
 
 export default function RootLayout({
