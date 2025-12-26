@@ -37,13 +37,13 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button onClick={toggleMenu} className="bg-transparent md:hidden mix-blend-difference">
-          {isOpen ? <XMarkIcon className="size-8 text-white" /> : <Bars3Icon className="size-8 text-white" />}
+          {isOpen ? <XMarkIcon className="size-8 text-black" /> : <Bars3Icon className="size-8 text-black" />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white/10 backdrop-blur-sm">
+        <div className="md:hidden bg-black backdrop-blur-sm">
           <div className="px-8 py-4">
             {navItems.map((item) => (
                <Link key={item.path} href={item.path} className="font-inter tracking-tight hover:text-blue-600 mix-blend-difference" onClick={toggleMenu}>

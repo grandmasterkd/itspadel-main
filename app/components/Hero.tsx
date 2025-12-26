@@ -24,7 +24,7 @@ const Hero = ({ image = '/itspadel-homehero-bg.webp', headline, paragraph, ctaTe
               {paragraph}
             </p>
           )}
-          <div className="flex gap-4 animate-fade-in-2">
+          <div className="w-fit flex flex-col md:flex-row gap-4 animate-fade-in-2">
             {ctaText && ctaLink && (
               <Link href={ctaLink} className="bg-[#009FF3] text-white px-6 py-3 font-inter font-medium tracking-tight hover:bg-[#0080cc] transition-colors uppercase">
                 {ctaText}
