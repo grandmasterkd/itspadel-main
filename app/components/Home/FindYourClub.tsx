@@ -6,11 +6,11 @@ import Image from 'next/image'
 
 const FindYourClub = () => {
   const clubs = [
-    { name: 'Nottingham', image: '/locations/itspadel-mock-location-nottingham.webp' },
-    { name: 'Birmingham', image: '/locations/itspadel-mock-location-birmingham.webp' },
-    { name: 'Lightwater', image: '/locations/itspadel-mock-location-lightwater.webp' },
-    { name: 'North Leeds', image: '/locations/itspadel-mock-location-lightwater.webp' },
-    { name: 'Darlington', image: '/locations/itspadel-mock-location-nottingham.webp' }
+    { name: 'Glasgow', image: '/locations/itspadel-mock-location-lightwater.webp' },
+    // { name: 'Birmingham', image: '/locations/itspadel-mock-location-birmingham.webp' },
+    // { name: 'Lightwater', image: '/locations/itspadel-mock-location-lightwater.webp' },
+    // { name: 'North Leeds', image: '/locations/itspadel-mock-location-lightwater.webp' },
+    // { name: 'Darlington', image: '/locations/itspadel-mock-location-nottingham.webp' }
   ]
 
   const [currentIndex, setCurrentIndex] = useState(0)

@@ -1,5 +1,6 @@
 import { Instagram, Twitter, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -84,7 +85,10 @@ const Footer = () => {
 
       {/* Third Container */}
       <div className="px-8 md:px-16 lg:px-32 py-10 animate-fade-in-2">
-        <div className="max-w-7xl mx-auto text-right">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+        
+            <Link href="https://restorefine.com" target="_blank" className="text-black/50 font-normal hover:text-[#009FF3] text-sm tracking-tighter"> Designed and built by RestoRefine Studio</Link>
+              
           <p className="text-gray-600 text-sm">
             All Rights Reserved. Copyright {currentYear}
           </p>
